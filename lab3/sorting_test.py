@@ -7,16 +7,15 @@ import list_generators as lg
 
 SEED = 319
 
-# функция измерения времени для заданного генератора и алгоритма
 def check_sorting_algorithm(
-    gen_func: Callable[[random.Random, int], List[float]],
-    sort_func: Callable[[List[float]], List[float]],
-    n: int
+    gen_function: Callable[[random.Random, int], List[float]],
+    sort_function: Callable[[List[float]], List[float]],
+    count: int
 ) -> float:
     rng = random.Random(SEED)
-    data = gen_func(rng, n)
+    data = gen_function(rng, count)
     start = time.perf_counter()
-    sort_func(data.copy())
+    sort_function(data.copy())
     return time.perf_counter() - start
 
 if __name__ == "__main__":
