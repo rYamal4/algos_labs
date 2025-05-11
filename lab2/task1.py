@@ -10,12 +10,13 @@ while True:
     except ValueError:
         print(f"'{s}' это не число")
         exit()
+print(f"Список действительных чисел: {S}")
 S = [x for x in S if x % 2 != 0]
+print(f"Список действительных чисел с удаленными четными числами: {S}")
 p = 1
 for x in S:
     if x != 0:
         p *= x
-print(f"Список действительных чисел: {S}")
 if len(S) > 0:
     print(f"Произведение ненулевых нечетных чисел: {p}")
 else:

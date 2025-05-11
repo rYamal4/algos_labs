@@ -1,15 +1,11 @@
-def is_prime(num):
-    if num < 2:
-        return False
-    i = 2
-    while i * i <= num:
-        if num % i == 0:
-            return False
-        i += 1
-    return True
+k = int(input("Введите количество тактов: "))
 
-n = int(input("Введите n: "))
-if is_prime(n):
-    print("Число простое")
-else:
-    print("Число составное")
+red = 1
+green = 0
+
+for _ in range(k):
+    new_green = red
+    red = green
+    green += new_green
+
+print(red + green)
